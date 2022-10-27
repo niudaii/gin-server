@@ -10,7 +10,7 @@ import (
 var store = base64Captcha.DefaultMemStore
 
 // Captcha 生成验证码
-func (b *BaseApi) Captcha(c *gin.Context) {
+func (a *BaseApi) Captcha(c *gin.Context) {
 	driver := base64Captcha.NewDriverDigit(global.Server.Captcha.ImgHeight, global.Server.Captcha.ImgWidth, global.Server.Captcha.KeyLong, 0.7, 80)
 	cp := base64Captcha.NewCaptcha(driver, store)
 	if id, b64s, err := cp.Generate(); err != nil {

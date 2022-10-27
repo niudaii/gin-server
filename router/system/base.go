@@ -8,16 +8,15 @@ import (
 
 type BaseRouter struct{}
 
-func (r *BaseRouter) InitBaseRouter(Router *gin.RouterGroup) (R gin.IRoutes) {
-	baseRouter := Router.Group("base").Use(middleware.Operation())
-	baseRouterWithoutRecord := Router.Group("base")
+func (r *BaseRouter) InitBaseRouter(Router *gin.RouterGroup) {
+	router := Router.Group("base").Use(middleware.Operation())
+	routerWithoutRecord := Router.Group("base")
 	baseApi := api.ApiGroupApp.SystemApiGroup.BaseApi
 	{
-		baseRouter.POST("login", baseApi.Login)
+		router.POST("login", baseApi.Login)
 	}
 	{
-		baseRouterWithoutRecord.GET("captcha", baseApi.Captcha)
-		baseRouterWithoutRecord.GET("logout", baseApi.Logout)
+		routerWithoutRecord.GET("captcha", baseApi.Captcha)
+		routerWithoutRecord.GET("logout", baseApi.Logout)
 	}
-	return baseRouter
 }

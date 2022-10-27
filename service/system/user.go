@@ -53,7 +53,7 @@ func (s *UserService) SelectList(f *request.PageInfo) (list []system.User, total
 	return
 }
 
-func (u *UserService) Delete(uuid uuid.UUID) (err error) {
+func (s *UserService) Delete(uuid uuid.UUID) (err error) {
 	err = global.DB.Where("uuid = ?", uuid).Delete(&system.User{}).Error
 	return
 }

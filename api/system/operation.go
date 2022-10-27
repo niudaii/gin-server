@@ -9,7 +9,7 @@ import (
 type OperationApi struct{}
 
 // FindList 查询操作日志列表
-func (o *OperationApi) FindList(c *gin.Context) {
+func (a *OperationApi) FindList(c *gin.Context) {
 	var req system.OperationFilter
 	if err := c.ShouldBindJSON(&req); err != nil {
 		response.ErrorWithMessage("参数校验失败", err, c)
