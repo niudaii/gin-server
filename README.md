@@ -22,6 +22,10 @@ orm 框架：gorm
 
 
 
+## 界面预览
+
+![image-20221027115653892](https://nnotes.oss-cn-hangzhou.aliyuncs.com/notes/image-20221027115653892.png)
+
 ## 参考项目
 
 https://github.com/flipped-aurora/gin-vue-admin
