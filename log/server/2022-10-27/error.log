@@ -1,8 +1,0 @@
-[server] 2022/10/27 10:17:55 error /Users/root/go/src/gin-server/initialize/server.go:33 accept tcp [::]:8092: use of closed network connection
-[server] 2022/10/27 10:19:13 error /Users/root/go/src/gin-server/initialize/server.go:33 net.Listen error: listen tcp :8092: bind: address already in use
-[server] 2022/10/27 10:23:50 error /Users/root/go/src/gin-server/model/common/response/common.go:37 参数校验失败 {"error": "Key: 'ChangePassword.OldPassword' Error:Field validation for 'OldPassword' failed on the 'required' tag"}
-[server] 2022/10/27 10:24:01 error /Users/root/go/src/gin-server/initialize/server.go:33 accept tcp [::]:8092: use of closed network connection
-[server] 2022/10/27 10:31:45 error /Users/root/go/src/gin-server/initialize/server.go:33 accept tcp [::]:8092: use of closed network connection
-[server] 2022/10/27 10:31:55 error /Users/root/go/src/gin-server/model/common/response/response.go:37 查询用户权限失败 {"error": "record not found"}
-[server] 2022/10/27 10:39:47 error /Users/root/go/src/gin-server/initialize/server.go:33 accept tcp [::]:8092: use of closed network connection
-[server] 2022/10/27 11:18:05 error /Users/root/go/src/gin-server/initialize/server.go:33 accept tcp [::]:8092: use of closed network connection
