@@ -1,0 +1,10 @@
+zap:
+  level: info
+  prefix:
+  format: console
+  director: log
+  encode-level: LowercaseLevelEncoder
+  stacktrace-key: stacktrace
+  max-age: 30
+  show-line: true
+  log-in-console: true

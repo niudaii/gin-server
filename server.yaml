@@ -1,0 +1,20 @@
+host: 127.0.0.1
+port: 8092
+mysql:
+  path: 127.0.0.1
+  port: 3306
+  config: charset=utf8mb4&parseTime=True&loc=Local
+  db-name: demo
+  username: root
+  password: xxxxxx
+  max-idle-conns: 10
+  max-open-conns: 100
+  log-mode: error
+captcha:
+  key-long: 6
+  img-width: 240
+  img-height: 80
+jwt:
+  signing-key: 2aa9a821-759a-4234-a3cb-a322a3f14c38
+  expires-time: 604800
+  issuer: niudaii
