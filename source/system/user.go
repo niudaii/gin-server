@@ -19,8 +19,8 @@ func (u *user) TableName() string {
 
 func (u *user) Initialize() error {
 	entities := []system.User{
-		{UUID: uuid.NewV4(), Username: "admin", Password: "429ff12ab245018967830cd551b126d5", AuthorityId: "1"},
-		{UUID: uuid.NewV4(), Username: "user", Password: "429ff12ab245018967830cd551b126d5", AuthorityId: "2"},
+		{UUID: uuid.NewV4(), Username: "admin", Password: "e10adc3949ba59abbe56e057f20f883e", AuthorityId: "1"},
+		{UUID: uuid.NewV4(), Username: "user", Password: "e10adc3949ba59abbe56e057f20f883e", AuthorityId: "2"},
 	}
 	if err := global.DB.Create(&entities).Error; err != nil {
 		return fmt.Errorf("%v %v", err, u.TableName()+"表初始化失败")
