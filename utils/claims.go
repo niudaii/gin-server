@@ -52,3 +52,17 @@ func GetUserAuthorityId(c *gin.Context) string {
 		return waitUse.AuthorityId
 	}
 }
+
+// GetUsername 从 gin 的 context 中获取从 jwt 解析出来的 username
+func GetUsername(c *gin.Context) string {
+	if claims, exists := c.Get("claims"); !exists {
+		if cl, err := GetClaims(c); err != nil {
+			return ""
+		} else {
+			return cl.Username
+		}
+	} else {
+		waitUse := claims.(*CustomClaims)
+		return waitUse.Username
+	}
+}
