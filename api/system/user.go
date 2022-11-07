@@ -63,6 +63,7 @@ func (a *UserApi) UserInfo(c *gin.Context) {
 	} else {
 		data := map[string]interface{}{
 			"name": user.Username,
+			// antd
 			"role": map[string]interface{}{
 				"permissions": []map[string]interface{}{
 					{
@@ -70,6 +71,11 @@ func (a *UserApi) UserInfo(c *gin.Context) {
 					},
 				},
 			},
+			// vue-element-admin
+			"roles": []string{
+				user.Authority.AuthorityName,
+			},
+			"avatar": "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif",
 		}
 		response.Ok(data, "查询用户权限成功", c)
 	}
