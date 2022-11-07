@@ -2,8 +2,8 @@ package api
 
 import "gin-server/api/system"
 
-type ApiGroup struct {
+type Group struct {
 	SystemApiGroup system.ApiGroup
 }
 
-var ApiGroupApp = new(ApiGroup)
+var GroupApp = new(Group)

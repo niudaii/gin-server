@@ -6,7 +6,7 @@ mysql:
   config: charset=utf8mb4&parseTime=True&loc=Local
   db-name: demo
   username: root
-  password: xxxxxx
+  password: zp857857857
   max-idle-conns: 10
   max-open-conns: 100
   log-mode: error

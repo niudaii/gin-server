@@ -2,8 +2,8 @@ package router
 
 import "gin-server/router/system"
 
-type RouterGroup struct {
+type Group struct {
 	System system.RouterGroup
 }
 
-var RouterGroupApp = new(RouterGroup)
+var GroupApp = new(Group)

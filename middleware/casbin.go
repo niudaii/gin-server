@@ -16,7 +16,7 @@ func CasbinHandler() gin.HandlerFunc {
 		act := c.Request.Method
 		// 获取用户的角色
 		sub := waitUse.AuthorityId
-		e := service.ServiceGroupApp.SystemServiceGroup.CasbinService.Casbin()
+		e := service.GroupApp.SystemServiceGroup.CasbinService.Casbin()
 		//判断策略中是否存在
 		success, _ := e.Enforce(sub, obj, act)
 		if utils.RunMode == utils.DebugMode || success {

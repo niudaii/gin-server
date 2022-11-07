@@ -16,7 +16,7 @@ func Routers() *gin.Engine {
 	r.Use(middleware.Cors())
 	global.Logger.Info("注册 CORS handler")
 	// 获取路由组实例
-	systemRouter := router.RouterGroupApp.System
+	systemRouter := router.GroupApp.System
 	PublicGroup := r.Group("")
 	{
 		// 健康监测

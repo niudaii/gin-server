@@ -11,7 +11,7 @@ type UserRouter struct{}
 func (r *UserRouter) InitUserRouter(Router *gin.RouterGroup) {
 	router := Router.Group("user").Use(middleware.Operation())
 	routerWithoutRecord := Router.Group("user") // 不记录操作日志
-	userApi := api.ApiGroupApp.SystemApiGroup.UserApi
+	userApi := api.GroupApp.SystemApiGroup.UserApi
 	{
 		router.POST("add", userApi.Add)                       // 新增用户
 		router.POST("delete", userApi.Delete)                 // 删除用户

@@ -47,6 +47,6 @@ func RegisterTables(db *gorm.DB) (err error) {
 		return
 	}
 	// 表数据初始化
-	err = service.ServiceGroupApp.SystemServiceGroup.InitDBService.InitMysqlData()
+	err = service.GroupApp.SystemServiceGroup.InitDBService.InitMysqlData()
 	return
 }
