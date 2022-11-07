@@ -4,7 +4,7 @@
 
 ## 基本介绍
 
-基于 gin 简单开发的后端脚手架，前端对应 [antdv-web](https://github.com/niudaii/antdv-web)。
+基于 gin 简单开发的后端脚手架，前端对应 [antdv-web](https://github.com/niudaii/antdv-web) 和 [vue-element-admin-web](https://github.com/niudaii/vue-element-admin-web)。
 
 ## 技术选型
 
@@ -86,7 +86,7 @@ entities := []system.Menu{
 
 ## 界面预览
 
-![image-20221027115653892](https://nnotes.oss-cn-hangzhou.aliyuncs.com/notes/image-20221027115653892.png)
+参考前端项目。
 
 ## 参考项目
 
