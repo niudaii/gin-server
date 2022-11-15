@@ -16,8 +16,9 @@ func Routers() *gin.Engine {
 	r.Use(middleware.Cors())
 	global.Logger.Info("注册 CORS handler")
 	// 获取路由组实例
+	g := r.Group("api/v1")
 	systemRouter := router.GroupApp.System
-	PublicGroup := r.Group("")
+	PublicGroup := g.Group("")
 	{
 		// 健康监测
 		PublicGroup.GET("/health", func(c *gin.Context) {
@@ -29,7 +30,7 @@ func Routers() *gin.Engine {
 		systemRouter.InitBaseRouter(PublicGroup)
 	}
 	// 身份验证+权限控制
-	PrivateGroup := r.Group("")
+	PrivateGroup := g.Group("")
 	PrivateGroup.Use(middleware.JwtAuth()).Use(middleware.CasbinHandler())
 	{
 		systemRouter.InitUserRouter(PrivateGroup)      // 注册 user 相关路由

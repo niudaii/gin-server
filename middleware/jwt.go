@@ -15,7 +15,7 @@ func JwtAuth() gin.HandlerFunc {
 			return
 		}
 		j := utils.NewJwt()
-		// parseToken 解析token包含的信息
+		// 解析token包含的信息
 		claims, err := j.ParseToken(token)
 		if err != nil {
 			response.UnAuthWithMessage(err.Error(), c)

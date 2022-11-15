@@ -30,7 +30,7 @@ func (s *OperationService) Insert(op system.Operation) (err error) {
 	return
 }
 
-func (s *OperationService) FindList(f *OperationFilter) (list []system.Operation, total int64, err error) {
+func (s *OperationService) SelectList(f *OperationFilter) (list []system.Operation, total int64, err error) {
 	db := f.conditions()
 	err = db.Count(&total).Error
 	if err != nil {

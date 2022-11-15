@@ -14,6 +14,7 @@ type Response struct {
 
 const (
 	OK     = 200
+	ERROR  = 400
 	UNAUTH = 401
 )
 
@@ -35,7 +36,7 @@ func OkWithMessage(msg string, c *gin.Context) {
 
 func ErrorWithMessage(msg string, err error, c *gin.Context) {
 	global.Logger.Error(msg, zap.Error(err))
-	Result(OK, map[string]interface{}{}, msg, c)
+	Result(ERROR, map[string]interface{}{}, msg, c)
 }
 
 func UnAuth(data interface{}, msg string, c *gin.Context) {

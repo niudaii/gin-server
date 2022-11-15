@@ -23,20 +23,20 @@ func (c *casbin) Initialize() error {
 	// 初始化表数据
 	entities := []adapter.CasbinRule{
 		// admin 权限
-		{Ptype: "p", V0: "1", V1: "/user/info", V2: "GET"},
-		{Ptype: "p", V0: "1", V1: "/user/menu", V2: "GET"},
-		{Ptype: "p", V0: "1", V1: "/user/changePassword", V2: "POST"},
-		{Ptype: "p", V0: "1", V1: "/user/add", V2: "POST"},
-		{Ptype: "p", V0: "1", V1: "/user/delete", V2: "POST"},
-		{Ptype: "p", V0: "1", V1: "/user/resetPassword", V2: "POST"},
-		{Ptype: "p", V0: "1", V1: "/user/find/list", V2: "POST"},
+		{Ptype: "p", V0: "1", V1: "/api/v1/user/create", V2: "POST"},
+		{Ptype: "p", V0: "1", V1: "/api/v1/user/delete", V2: "POST"},
+		{Ptype: "p", V0: "1", V1: "/api/v1/user/resetPassword", V2: "POST"},
+		{Ptype: "p", V0: "1", V1: "/api/v1/user/changePassword", V2: "POST"},
+		{Ptype: "p", V0: "1", V1: "/api/v1/user/info", V2: "GET"},
+		{Ptype: "p", V0: "1", V1: "/api/v1/user/menu", V2: "GET"},
+		{Ptype: "p", V0: "1", V1: "/api/v1/users", V2: "POST"},
 
-		{Ptype: "p", V0: "1", V1: "/operation/find/list", V2: "POST"},
+		{Ptype: "p", V0: "1", V1: "/api/v1/operations", V2: "POST"},
 
 		// user 权限
-		{Ptype: "p", V0: "2", V1: "/user/info", V2: "GET"},
-		{Ptype: "p", V0: "2", V1: "/user/menu", V2: "GET"},
-		{Ptype: "p", V0: "2", V1: "/user/changePassword", V2: "POST"},
+		{Ptype: "p", V0: "2", V1: "/api/v1/user/changePassword", V2: "POST"},
+		{Ptype: "p", V0: "2", V1: "/api/v1/user/info", V2: "GET"},
+		{Ptype: "p", V0: "2", V1: "/api/v1/user/menu", V2: "GET"},
 	}
 	if err := global.DB.Create(&entities).Error; err != nil {
 		return fmt.Errorf("%v %v", err, c.TableName()+"表初始化失败")
