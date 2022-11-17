@@ -3,7 +3,7 @@ package system
 import "time"
 
 type Operation struct {
-	Id        uint      `json:"" gorm:"primarykey"` // 主键ID
+	Id        uint      `json:"id" gorm:"primarykey"` // 主键ID
 	CreatedAt time.Time `json:"createdAt"`          // 创建时间
 	Operator  string    `json:"operator"`
 	Ip        string    `json:"ip"`
