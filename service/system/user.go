@@ -13,6 +13,10 @@ import (
 
 type UserService struct{}
 
+type UserFilter struct {
+	request.PageInfo
+}
+
 func (s *UserService) Login(username, password string) (user system.User, err error) {
 	err = global.DB.Where("username = ? AND password = ?", username, password).First(&user).Error
 	return
@@ -37,7 +41,7 @@ func (s *UserService) Select(uuid uuid.UUID) (user system.User, err error) {
 	return
 }
 
-func (s *UserService) SelectList(f *request.PageInfo) (list []system.User, total int64, err error) {
+func (s *UserService) SelectList(f *UserFilter) (list []system.User, total int64, err error) {
 	db := global.DB.Model(&system.User{})
 	err = db.Count(&total).Error
 	if err != nil {

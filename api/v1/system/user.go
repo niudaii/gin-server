@@ -4,6 +4,7 @@ import (
 	"gin-server/model/common/request"
 	"gin-server/model/common/response"
 	systemModel "gin-server/model/system"
+	"gin-server/service/system"
 	"gin-server/utils"
 	"github.com/gin-gonic/gin"
 )
@@ -112,7 +113,7 @@ func (a *UserApi) Create(c *gin.Context) {
 
 // FindList 查询用户列表
 func (a *UserApi) FindList(c *gin.Context) {
-	var req request.PageInfo
+	var req system.UserFilter
 	if err := c.ShouldBindJSON(&req); err != nil {
 		response.ErrorWithMessage("参数校验失败", err, c)
 		return
