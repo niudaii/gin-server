@@ -17,6 +17,11 @@ type UserFilter struct {
 	request.PageInfo
 }
 
+func (f *UserFilter) conditions() (db *gorm.DB) {
+	db = global.DB.Model(&system.User{})
+	return
+}
+
 func (s *UserService) Login(username, password string) (user system.User, err error) {
 	err = global.DB.Where("username = ? AND password = ?", username, password).First(&user).Error
 	return
@@ -42,7 +47,7 @@ func (s *UserService) Select(uuid uuid.UUID) (user system.User, err error) {
 }
 
 func (s *UserService) SelectList(f *UserFilter) (list []system.User, total int64, err error) {
-	db := global.DB.Model(&system.User{})
+	db := f.conditions()
 	err = db.Count(&total).Error
 	if err != nil {
 		return
