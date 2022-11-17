@@ -11,7 +11,7 @@ type UserRouter struct{}
 func (r *UserRouter) InitUserRouter(Router *gin.RouterGroup) {
 	router := Router.Group("").Use(middleware.Operation())
 	routerWithoutRecord := Router.Group("")
-	userApi := v1.GroupApp.SystemApiGroup.UserApi
+	userApi := v1.GroupApp.System.UserApi
 	{
 		router.POST("user/create", userApi.Create)                 // 创建用户
 		router.POST("user/delete", userApi.Delete)                 // 删除用户

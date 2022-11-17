@@ -44,7 +44,7 @@ func Operation() gin.HandlerFunc {
 		operation.Status = c.Writer.Status()
 		operation.Resp = writer.body.String()
 		operation.Resp = operation.Resp[:utils.Min(200, len(operation.Resp))]
-		if err := service.GroupApp.SystemServiceGroup.OperationService.Insert(operation); err != nil {
+		if err := service.GroupApp.System.OperationService.Insert(operation); err != nil {
 			global.Logger.Error("create operation record error", zap.Error(err))
 		}
 	}

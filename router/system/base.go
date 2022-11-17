@@ -11,7 +11,7 @@ type BaseRouter struct{}
 func (r *BaseRouter) InitBaseRouter(Router *gin.RouterGroup) {
 	router := Router.Group("base").Use(middleware.Operation())
 	routerWithoutRecord := Router.Group("base")
-	baseApi := v1.GroupApp.SystemApiGroup.BaseApi
+	baseApi := v1.GroupApp.System.BaseApi
 	{
 		router.POST("login", baseApi.Login)
 	}

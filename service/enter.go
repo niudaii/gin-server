@@ -3,7 +3,7 @@ package service
 import "gin-server/service/system"
 
 type Group struct {
-	SystemServiceGroup system.ServiceGroup
+	System system.ServiceGroup
 }
 
 var GroupApp = new(Group)
