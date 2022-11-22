@@ -67,11 +67,6 @@ func (s *UserService) Delete(uuid uuid.UUID) (err error) {
 	return
 }
 
-func (s *UserService) ResetPassword(uuid uuid.UUID) (err error) {
-	err = global.DB.Model(&system.User{}).Where("uuid = ?", uuid).Update("password", utils.Md5("fgnb")).Error
-	return
-}
-
 func (s *UserService) ChangePassword(uuid uuid.UUID, password string) (err error) {
 	err = global.DB.Model(&system.User{}).Where("uuid = ?", uuid).Update("password", password).Error
 	return

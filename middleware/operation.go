@@ -19,7 +19,9 @@ func Operation() gin.HandlerFunc {
 		if c.Request.Method != http.MethodGet {
 			var err error
 			body, err = ioutil.ReadAll(c.Request.Body)
-			if err == nil {
+			if err != nil {
+				global.Logger.Error("read body from request error", zap.Error(err))
+			} else {
 				c.Request.Body = ioutil.NopCloser(bytes.NewBuffer(body))
 			}
 		}

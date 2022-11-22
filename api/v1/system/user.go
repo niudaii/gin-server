@@ -1,6 +1,7 @@
 package system
 
 import (
+	"fmt"
 	"gin-server/model/common/request"
 	"gin-server/model/common/response"
 	systemModel "gin-server/model/system"
@@ -151,10 +152,11 @@ func (a *UserApi) ResetPassword(c *gin.Context) {
 		response.ErrorWithMessage("参数校验失败", err, c)
 		return
 	}
-	if err := userService.ResetPassword(req.UUID); err != nil {
+	newPassword := utils.RandomString(8)
+	if err := userService.ChangePassword(req.UUID, utils.Md5(newPassword)); err != nil {
 		response.ErrorWithMessage("重置密码失败", err, c)
 	} else {
-		response.OkWithMessage("重置密码成功", c)
+		response.OkWithMessage(fmt.Sprintf("重置密码为 %v", newPassword), c)
 	}
 }
 

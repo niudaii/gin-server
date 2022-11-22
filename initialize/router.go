@@ -16,7 +16,7 @@ func Routers() *gin.Engine {
 	r.Use(middleware.Cors())
 	global.Logger.Info("注册 CORS handler")
 	// 获取路由组实例
-	g := r.Group("api/v1")
+	g := r.Group("api")
 	systemRouter := router.GroupApp.System
 	PublicGroup := g.Group("")
 	{
