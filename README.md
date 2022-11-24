@@ -18,20 +18,20 @@ orm 框架：gorm
 // 初始化表数据
 entities := []adapter.CasbinRule{
 	// admin 权限
-	{Ptype: "p", V0: "1", V1: "/api/v1/user/create", V2: "POST"},
-	{Ptype: "p", V0: "1", V1: "/api/v1/user/delete", V2: "POST"},
-	{Ptype: "p", V0: "1", V1: "/api/v1/user/resetPassword", V2: "POST"},
-	{Ptype: "p", V0: "1", V1: "/api/v1/user/changePassword", V2: "POST"},
-	{Ptype: "p", V0: "1", V1: "/api/v1/user/info", V2: "GET"},
-	{Ptype: "p", V0: "1", V1: "/api/v1/user/menu", V2: "GET"},
-	{Ptype: "p", V0: "1", V1: "/api/v1/users", V2: "POST"},
+	{Ptype: "p", V0: "1", V1: "/api/user/create", V2: "POST"},
+	{Ptype: "p", V0: "1", V1: "/api/user/delete", V2: "POST"},
+	{Ptype: "p", V0: "1", V1: "/api/user/resetPassword", V2: "POST"},
+	{Ptype: "p", V0: "1", V1: "/api/user/changePassword", V2: "POST"},
+	{Ptype: "p", V0: "1", V1: "/api/user/info", V2: "GET"},
+	{Ptype: "p", V0: "1", V1: "/api/user/menu", V2: "GET"},
+	{Ptype: "p", V0: "1", V1: "/api/users", V2: "POST"},
 
-	{Ptype: "p", V0: "1", V1: "/api/v1/operations", V2: "POST"},
+	{Ptype: "p", V0: "1", V1: "/api/operations", V2: "POST"},
 	
 	// user 权限
-	{Ptype: "p", V0: "2", V1: "/api/v1/user/changePassword", V2: "POST"},
-	{Ptype: "p", V0: "2", V1: "/api/v1/user/info", V2: "GET"},
-	{Ptype: "p", V0: "2", V1: "/api/v1/user/menu", V2: "GET"},
+	{Ptype: "p", V0: "2", V1: "/api/user/changePassword", V2: "POST"},
+	{Ptype: "p", V0: "2", V1: "/api/user/info", V2: "GET"},
+	{Ptype: "p", V0: "2", V1: "/api/user/menu", V2: "GET"},
 }
 ```
 
