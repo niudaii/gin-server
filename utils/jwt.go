@@ -68,7 +68,6 @@ func (j *Jwt) ParseToken(tokenString string) (*CustomClaims, error) {
 			return claims, nil
 		}
 		return nil, TokenInvalid
-
 	} else {
 		return nil, TokenInvalid
 	}
