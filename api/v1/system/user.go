@@ -2,11 +2,11 @@ package system
 
 import (
 	"fmt"
-	"github.com/niudaii/gin-server/model/common/request"
-	"github.com/niudaii/gin-server/model/common/response"
-	systemModel "github.com/niudaii/gin-server/model/system"
-	"github.com/niudaii/gin-server/service/system"
-	"github.com/niudaii/gin-server/utils"
+	"gin-server/model/common/request"
+	"gin-server/model/common/response"
+	systemModel "gin-server/model/system"
+	"gin-server/service/system"
+	"gin-server/utils"
 	"github.com/gin-gonic/gin"
 )
 

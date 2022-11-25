@@ -1,6 +1,6 @@
 package router
 
-import "github.com/niudaii/gin-server/router/system"
+import "gin-server/router/system"
 
 type Group struct {
 	System system.RouterGroup

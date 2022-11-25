@@ -1,9 +1,9 @@
 package initialize
 
 import (
-	"github.com/niudaii/gin-server/global"
-	"github.com/niudaii/gin-server/middleware"
-	"github.com/niudaii/gin-server/router"
+	"gin-server/global"
+	"gin-server/middleware"
+	"gin-server/router"
 	"github.com/gin-gonic/gin"
 )
 

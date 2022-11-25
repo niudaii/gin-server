@@ -2,7 +2,7 @@ package system
 
 import (
 	"fmt"
-	"github.com/niudaii/gin-server/global"
+	"gin-server/global"
 )
 
 var AuthoritiesMenus = new(authoritiesMenus)

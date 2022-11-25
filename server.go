@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/niudaii/gin-server/global"
-	"github.com/niudaii/gin-server/initialize"
+	"gin-server/global"
+	"gin-server/initialize"
 	"go.uber.org/zap"
 	"log"
 )

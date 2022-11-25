@@ -1,7 +1,7 @@
 package internal
 
 import (
-	"github.com/niudaii/gin-server/global"
+	"gin-server/global"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 )

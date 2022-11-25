@@ -2,8 +2,8 @@ package system
 
 import (
 	"fmt"
-	"github.com/niudaii/gin-server/global"
-	"github.com/niudaii/gin-server/model/system"
+	"gin-server/global"
+	"gin-server/model/system"
 )
 
 var Menu = new(menu)

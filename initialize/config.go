@@ -1,7 +1,7 @@
 package initialize
 
 import (
-	"github.com/niudaii/gin-server/global"
+	"gin-server/global"
 	"gopkg.in/yaml.v3"
 	"log"
 	"os"

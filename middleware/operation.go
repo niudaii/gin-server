@@ -2,10 +2,10 @@ package middleware
 
 import (
 	"bytes"
-	"github.com/niudaii/gin-server/global"
-	"github.com/niudaii/gin-server/model/system"
-	"github.com/niudaii/gin-server/service"
-	"github.com/niudaii/gin-server/utils"
+	"gin-server/global"
+	"gin-server/model/system"
+	"gin-server/service"
+	"gin-server/utils"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 	"io/ioutil"

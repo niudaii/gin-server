@@ -1,9 +1,9 @@
 package initialize
 
 import (
-	"github.com/niudaii/gin-server/global"
-	"github.com/niudaii/gin-server/initialize/internal"
-	"github.com/niudaii/gin-server/utils"
+	"gin-server/global"
+	"gin-server/initialize/internal"
+	"gin-server/utils"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"os"

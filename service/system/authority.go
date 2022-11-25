@@ -1,8 +1,8 @@
 package system
 
 import (
-	"github.com/niudaii/gin-server/global"
-	"github.com/niudaii/gin-server/model/system"
+	"gin-server/global"
+	"gin-server/model/system"
 )
 
 type AuthorityService struct{}

@@ -1,6 +1,6 @@
 package service
 
-import "github.com/niudaii/gin-server/service/system"
+import "gin-server/service/system"
 
 type Group struct {
 	System system.ServiceGroup
