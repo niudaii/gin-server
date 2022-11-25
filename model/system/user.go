@@ -1,7 +1,7 @@
 package system
 
 import (
-	"gin-server/model"
+	"github.com/niudaii/gin-server/model"
 	uuid "github.com/satori/go.uuid"
 )
 

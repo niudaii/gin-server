@@ -2,8 +2,8 @@ package initialize
 
 import (
 	"fmt"
-	"gin-server/global"
-	"gin-server/utils"
+	"github.com/niudaii/gin-server/global"
+	"github.com/niudaii/gin-server/utils"
 	"github.com/fvbock/endless"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"

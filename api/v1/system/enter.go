@@ -1,6 +1,6 @@
 package system
 
-import "gin-server/service"
+import "github.com/niudaii/gin-server/service"
 
 type ApiGroup struct {
 	BaseApi

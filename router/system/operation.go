@@ -1,7 +1,7 @@
 package system
 
 import (
-	"gin-server/api/v1"
+	"github.com/niudaii/gin-server/api/v1"
 	"github.com/gin-gonic/gin"
 )
 

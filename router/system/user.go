@@ -1,8 +1,8 @@
 package system
 
 import (
-	"gin-server/api/v1"
-	"gin-server/middleware"
+	"github.com/niudaii/gin-server/api/v1"
+	"github.com/niudaii/gin-server/middleware"
 	"github.com/gin-gonic/gin"
 )
 

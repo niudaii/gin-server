@@ -2,7 +2,7 @@ package utils
 
 import (
 	"fmt"
-	"gin-server/global"
+	"github.com/niudaii/gin-server/global"
 	"github.com/golang-jwt/jwt"
 	"time"
 )

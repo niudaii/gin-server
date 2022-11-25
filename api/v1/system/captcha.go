@@ -1,8 +1,8 @@
 package system
 
 import (
-	"gin-server/global"
-	"gin-server/model/common/response"
+	"github.com/niudaii/gin-server/global"
+	"github.com/niudaii/gin-server/model/common/response"
 	"github.com/gin-gonic/gin"
 	"github.com/mojocn/base64Captcha"
 )

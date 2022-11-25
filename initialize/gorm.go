@@ -2,10 +2,10 @@ package initialize
 
 import (
 	"fmt"
-	"gin-server/global"
-	"gin-server/initialize/internal"
-	"gin-server/model/system"
-	"gin-server/service"
+	"github.com/niudaii/gin-server/global"
+	"github.com/niudaii/gin-server/initialize/internal"
+	"github.com/niudaii/gin-server/model/system"
+	"github.com/niudaii/gin-server/service"
 	adapter "github.com/casbin/gorm-adapter/v3"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"

@@ -3,8 +3,8 @@ package system
 import (
 	"errors"
 	"fmt"
-	"gin-server/global"
-	"gin-server/model/system"
+	"github.com/niudaii/gin-server/global"
+	"github.com/niudaii/gin-server/model/system"
 	uuid "github.com/satori/go.uuid"
 	"gorm.io/gorm"
 )

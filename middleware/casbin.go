@@ -1,9 +1,9 @@
 package middleware
 
 import (
-	"gin-server/model/common/response"
-	"gin-server/service"
-	"gin-server/utils"
+	"github.com/niudaii/gin-server/model/common/response"
+	"github.com/niudaii/gin-server/service"
+	"github.com/niudaii/gin-server/utils"
 	"github.com/gin-gonic/gin"
 )
 

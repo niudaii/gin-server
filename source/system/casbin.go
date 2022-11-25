@@ -2,7 +2,7 @@ package system
 
 import (
 	"fmt"
-	"gin-server/global"
+	"github.com/niudaii/gin-server/global"
 	adapter "github.com/casbin/gorm-adapter/v3"
 )
 

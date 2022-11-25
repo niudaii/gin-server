@@ -1,7 +1,7 @@
 package global
 
 import (
-	"gin-server/config"
+	"github.com/niudaii/gin-server/config"
 	"go.uber.org/zap"
 	"gorm.io/gorm"
 )

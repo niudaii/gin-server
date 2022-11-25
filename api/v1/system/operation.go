@@ -1,8 +1,8 @@
 package system
 
 import (
-	"gin-server/model/common/response"
-	"gin-server/service/system"
+	"github.com/niudaii/gin-server/model/common/response"
+	"github.com/niudaii/gin-server/service/system"
 	"github.com/gin-gonic/gin"
 )
 

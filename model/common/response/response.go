@@ -1,7 +1,7 @@
 package response
 
 import (
-	"gin-server/global"
+	"github.com/niudaii/gin-server/global"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 )

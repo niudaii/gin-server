@@ -2,8 +2,8 @@ package system
 
 import (
 	"fmt"
-	"gin-server/global"
-	"gin-server/source/system"
+	"github.com/niudaii/gin-server/global"
+	"github.com/niudaii/gin-server/source/system"
 	"go.uber.org/zap"
 )
 

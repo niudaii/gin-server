@@ -2,8 +2,8 @@ package system
 
 import (
 	"fmt"
-	"gin-server/global"
-	"gin-server/model/system"
+	"github.com/niudaii/gin-server/global"
+	"github.com/niudaii/gin-server/model/system"
 )
 
 var Authority = new(authority)

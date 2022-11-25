@@ -1,5 +1,5 @@
 <h1 align="center">
-	gin-server
+	github.com/niudaii/gin-server
 </h1>
 
 ## 基本介绍

@@ -1,7 +1,7 @@
 package internal
 
 import (
-	"gin-server/global"
+	"github.com/niudaii/gin-server/global"
 	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
 	"go.uber.org/zap/zapcore"
 	"os"

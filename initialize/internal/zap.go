@@ -2,7 +2,7 @@ package internal
 
 import (
 	"fmt"
-	"gin-server/global"
+	"github.com/niudaii/gin-server/global"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"time"
