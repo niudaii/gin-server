@@ -1,4 +1,4 @@
-module gin-server
+module github.com/niudaii/gin-server
 
 go 1.18
 
