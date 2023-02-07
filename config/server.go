@@ -6,6 +6,7 @@ import (
 )
 
 type Server struct {
+	RunMode string  `yaml:"run-mode"`
 	Host    string  `yaml:"host"`
 	Port    string  `yaml:"port"`
 	Mysql   Mysql   `yaml:"mysql"`

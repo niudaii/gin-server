@@ -3,7 +3,6 @@ package initialize
 import (
 	"fmt"
 	"gin-server/global"
-	"gin-server/utils"
 	"github.com/fvbock/endless"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
@@ -25,7 +24,7 @@ func initServer(address string, router *gin.Engine) server {
 
 // RunServer 启动服务
 func RunServer() {
-	gin.SetMode(utils.RunMode)
+	gin.SetMode(global.Server.RunMode)
 	router := Routers()
 	address := fmt.Sprintf(":%v", global.Server.Port)
 	s := initServer(address, router)

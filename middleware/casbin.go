@@ -1,6 +1,7 @@
 package middleware
 
 import (
+	"gin-server/global"
 	"gin-server/model/common/response"
 	"gin-server/service"
 	"gin-server/utils"
@@ -19,7 +20,7 @@ func CasbinHandler() gin.HandlerFunc {
 		e := service.GroupApp.System.CasbinService.Casbin()
 		//判断策略中是否存在
 		success, _ := e.Enforce(sub, obj, act)
-		if utils.RunMode == utils.DebugMode || success {
+		if global.Server.RunMode == "debug" || success {
 			c.Next()
 		} else {
 			response.OkWithMessage("权限不足", c)

@@ -27,7 +27,7 @@ func (a *BaseApi) Login(c *gin.Context) {
 		"isLogin": true,
 	}
 	// 判断验证码
-	if utils.RunMode == utils.DebugMode || !store.Verify(req.CaptchaId, req.Captcha, true) {
+	if global.Server.RunMode == "release" && !store.Verify(req.CaptchaId, req.Captcha, true) {
 		response.UnAuth(data, "验证码错误", c)
 		return
 	}
