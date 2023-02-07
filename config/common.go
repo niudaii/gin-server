@@ -1,12 +1,40 @@
 package config
 
 import (
+	"fmt"
 	"go.uber.org/zap/zapcore"
+	"gopkg.in/yaml.v3"
 	"strings"
 )
 
 type Common struct {
 	Zap Zap `yaml:"zap"`
+}
+
+//func (c *Common) String() string {
+//	_, err := json.Marshal(*c)
+//	if err != nil {
+//		return fmt.Sprintf("%+v", *c)
+//	}
+//	var bf bytes.Buffer
+//	jsonEncoder := json.NewEncoder(&bf)
+//	jsonEncoder.SetEscapeHTML(false)
+//	jsonEncoder.SetIndent("", "    ")
+//	err = jsonEncoder.Encode(c)
+//	if err != nil {
+//		return fmt.Sprintf("%+v", *c)
+//	}
+//	return bf.String()
+//}
+
+func (c *Common) String() string {
+	_, err := yaml.Marshal(*c)
+	if err != nil {
+		return fmt.Sprintf("%+v", *c)
+	}
+	var bf []byte
+	bf, err = yaml.Marshal(c)
+	return "\n" + string(bf) + "\n"
 }
 
 type Zap struct {

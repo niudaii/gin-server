@@ -1,9 +1,7 @@
 package response
 
 import (
-	"gin-server/global"
 	"github.com/gin-gonic/gin"
-	"go.uber.org/zap"
 )
 
 type Response struct {
@@ -35,7 +33,6 @@ func OkWithMessage(msg string, c *gin.Context) {
 }
 
 func ErrorWithMessage(msg string, err error, c *gin.Context) {
-	global.Logger.Error(msg, zap.Error(err))
 	Result(ERROR, map[string]interface{}{}, msg, c)
 }
 

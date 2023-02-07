@@ -2,12 +2,14 @@ package system
 
 import (
 	"fmt"
+	"gin-server/global"
 	"gin-server/model/common/request"
 	"gin-server/model/common/response"
 	systemModel "gin-server/model/system"
 	"gin-server/service/system"
 	"gin-server/utils"
 	"github.com/gin-gonic/gin"
+	"go.uber.org/zap"
 )
 
 type BaseApi struct{}
@@ -16,14 +18,16 @@ type BaseApi struct{}
 func (a *BaseApi) Login(c *gin.Context) {
 	var req request.Login
 	if err := c.ShouldBindJSON(&req); err != nil {
-		response.ErrorWithMessage("参数校验失败", err, c)
+		msg := "参数校验失败"
+		response.ErrorWithMessage(msg, err, c)
+		global.Logger.Error(msg, zap.Error(err))
 		return
 	}
 	data := map[string]interface{}{
 		"isLogin": true,
 	}
 	// 判断验证码
-	if !store.Verify(req.CaptchaId, req.Captcha, true) {
+	if utils.RunMode == utils.DebugMode || !store.Verify(req.CaptchaId, req.Captcha, true) {
 		response.UnAuth(data, "验证码错误", c)
 		return
 	}
@@ -83,7 +87,7 @@ func (a *UserApi) GetInfo(c *gin.Context) {
 	}
 }
 
-// UserMenu 查询用户菜单
+// GetMenu UserMenu 查询用户菜单
 func (a *UserApi) GetMenu(c *gin.Context) {
 	uuid := utils.GetUserUuid(c)
 	user, err := userService.Select(uuid)

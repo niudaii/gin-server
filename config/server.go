@@ -1,11 +1,26 @@
 package config
 
+import (
+	"fmt"
+	"gopkg.in/yaml.v3"
+)
+
 type Server struct {
 	Host    string  `yaml:"host"`
 	Port    string  `yaml:"port"`
 	Mysql   Mysql   `yaml:"mysql"`
 	Captcha Captcha `yaml:"captcha"`
 	Jwt     Jwt     `yaml:"jwt"`
+}
+
+func (s *Server) String() string {
+	_, err := yaml.Marshal(*s)
+	if err != nil {
+		return fmt.Sprintf("%+v", *s)
+	}
+	var bf []byte
+	bf, err = yaml.Marshal(s)
+	return "\n" + string(bf) + "\n"
 }
 
 func (s *Server) BaseUrl() string {

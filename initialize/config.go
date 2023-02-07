@@ -20,7 +20,7 @@ func CommonConfig() (err error) {
 	if err = yaml.Unmarshal(bytes, &global.Common); err != nil {
 		return
 	}
-	log.Printf("info %v 解析成功\n%+v", commonFile, global.Common)
+	log.Printf("info %v 解析成功\n%+v", commonFile, global.Common.String())
 	return
 }
 
@@ -32,6 +32,6 @@ func ServerConfig() (err error) {
 	if err = yaml.Unmarshal(bytes, &global.Server); err != nil {
 		return
 	}
-	log.Printf("info %v 解析成功\n%+v", serverFile, global.Server)
+	log.Printf("info %v 解析成功\n%+v", serverFile, global.Server.String())
 	return
 }
