@@ -9,7 +9,6 @@ import (
 	"gin-server/service/system"
 	"gin-server/utils"
 	"github.com/gin-gonic/gin"
-	"go.uber.org/zap"
 )
 
 type BaseApi struct{}
@@ -18,9 +17,7 @@ type BaseApi struct{}
 func (a *BaseApi) Login(c *gin.Context) {
 	var req request.Login
 	if err := c.ShouldBindJSON(&req); err != nil {
-		msg := "参数校验失败"
-		response.ErrorWithMessage(msg, err, c)
-		global.Logger.Error(msg, zap.Error(err))
+		response.ErrorWithMessage("参数校验失败", err, c)
 		return
 	}
 	data := map[string]interface{}{

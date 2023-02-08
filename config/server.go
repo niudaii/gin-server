@@ -21,7 +21,7 @@ func (s *Server) String() string {
 	}
 	var bf []byte
 	bf, err = yaml.Marshal(s)
-	return "\n" + string(bf) + "\n"
+	return string(bf) + "\n"
 }
 
 func (s *Server) BaseUrl() string {

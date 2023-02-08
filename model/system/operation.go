@@ -4,10 +4,11 @@ import "time"
 
 type Operation struct {
 	Id        uint      `json:"id" gorm:"primarykey"` // 主键ID
-	CreatedAt time.Time `json:"createdAt"`          // 创建时间
+	CreatedAt time.Time `json:"createdAt"`            // 创建时间
 	Operator  string    `json:"operator"`
 	Ip        string    `json:"ip"`
 	Agent     string    `json:"-"`
+	Query     string    `json:"query"`
 	Method    string    `json:"method"`
 	Path      string    `json:"path"`
 	Status    int       `json:"status"`

@@ -1,7 +1,11 @@
 package response
 
 import (
+	"fmt"
+	"gin-server/global"
 	"github.com/gin-gonic/gin"
+	"go.uber.org/zap"
+	"runtime"
 )
 
 type Response struct {
@@ -33,6 +37,10 @@ func OkWithMessage(msg string, c *gin.Context) {
 }
 
 func ErrorWithMessage(msg string, err error, c *gin.Context) {
+	pc, file, line, _ := runtime.Caller(1) // 调用上一个函数的信息
+	name := runtime.FuncForPC(pc).Name()
+	place := fmt.Sprintf("%v:%v %v", file, line, name)
+	global.Logger.Error(msg+" "+place, zap.Error(err))
 	Result(ERROR, map[string]interface{}{}, msg, c)
 }
 

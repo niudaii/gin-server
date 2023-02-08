@@ -19,18 +19,18 @@ func Operation() gin.HandlerFunc {
 		if c.Request.Method != http.MethodGet {
 			var err error
 			body, err = ioutil.ReadAll(c.Request.Body)
-			if err != nil {
-				global.Logger.Error("read body from request error", zap.Error(err))
-			} else {
+			if err == nil {
 				c.Request.Body = ioutil.NopCloser(bytes.NewBuffer(body))
 			}
 		}
 		operation := system.Operation{
-			Ip:     c.ClientIP(),
+			Status: c.Writer.Status(),
 			Method: c.Request.Method,
 			Path:   c.Request.URL.Path,
-			Agent:  c.Request.UserAgent(),
+			Query:  c.Request.URL.RawQuery,
 			Body:   string(body),
+			Ip:     c.ClientIP(),
+			Agent:  c.Request.UserAgent(),
 		}
 		claims, _ := utils.GetClaims(c)
 		if claims != nil {
@@ -45,9 +45,9 @@ func Operation() gin.HandlerFunc {
 		c.Next()
 		operation.Status = c.Writer.Status()
 		operation.Resp = writer.body.String()
-		operation.Resp = operation.Resp[:utils.Min(200, len(operation.Resp))]
+		operation.Resp = operation.Resp[:utils.Min(1000, len(operation.Resp))]
 		if err := service.GroupApp.System.OperationService.Insert(operation); err != nil {
-			global.Logger.Error("create operation record error", zap.Error(err))
+			global.Logger.Error("插入操作记录失败", zap.Error(err))
 		}
 	}
 }

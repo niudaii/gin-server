@@ -34,7 +34,7 @@ func (c *Common) String() string {
 	}
 	var bf []byte
 	bf, err = yaml.Marshal(c)
-	return "\n" + string(bf) + "\n"
+	return string(bf) + "\n"
 }
 
 type Zap struct {
