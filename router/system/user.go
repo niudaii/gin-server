@@ -19,8 +19,8 @@ func (r *UserRouter) InitUserRouter(Router *gin.RouterGroup) {
 		router.POST("user/changePassword", userApi.ChangePassword) // 修改密码
 	}
 	{
-		routerWithoutRecord.GET("user/info", userApi.GetInfo) // 查询用户权限
-		routerWithoutRecord.GET("user/menu", userApi.GetMenu) // 查询用户菜单
-		routerWithoutRecord.POST("users", userApi.FindList)   // 分页查询用户列表
+		routerWithoutRecord.GET("user/info", userApi.GetInfo)   // 查询用户权限
+		routerWithoutRecord.GET("user/menu", userApi.GetMenu)   // 查询用户菜单
+		routerWithoutRecord.POST("user/list", userApi.FindList) // 分页查询用户列表
 	}
 }

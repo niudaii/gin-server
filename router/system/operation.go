@@ -11,6 +11,6 @@ func (r *OperationRouter) InitOperationRouter(Router *gin.RouterGroup) {
 	routerWithoutRecord := Router.Group("")
 	operationApi := v1.GroupApp.System.OperationApi
 	{
-		routerWithoutRecord.POST("operations", operationApi.FindList) // 查询操作日志列表
+		routerWithoutRecord.POST("operation/list", operationApi.FindList) // 查询操作日志列表
 	}
 }
